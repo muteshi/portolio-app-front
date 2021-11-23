@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Contact from "../contact/Contact";
 import { getBlogPost } from "../../services/blogServices";
 import { getDateDetails } from "../utils";
 import Loader from "../common/Loader";
 import { avatar } from "../../config.json";
 import useDocumentTitle from "../../hooks/useDocumentTitle";
+import { ArticleComments, ArticleCommentsCount } from "../common/Disqus";
 
 const ArticleContent = () => {
   const [postDetails, setPostDetails] = useState();
@@ -25,7 +25,6 @@ const ArticleContent = () => {
     if (postDetails !== undefined) setPageTitle(postDetails.title);
   }, [postDetails]);
 
-  console.log(pageTitle);
   useDocumentTitle(`${pageTitle} || muteshi.com`);
   // console.log(postDetails);
   let tagsLoading = (
@@ -66,6 +65,10 @@ const ArticleContent = () => {
                       <label>Muteshi Paul</label>
                       <span>{getDateDetails(postDetails.date_posted)}</span>
                     </div>
+                    <ArticleCommentsCount
+                      slug={postSlug}
+                      title={postDetails.title}
+                    />
                   </div>
                 </div>
                 {/* End .article-title */}
@@ -80,7 +83,7 @@ const ArticleContent = () => {
               {/* End Article */}
               <div className="contact-form article-comment">
                 <h4>Leave a Reply</h4>
-                <Contact />
+                <ArticleComments slug={postSlug} title={postDetails.title} />
               </div>
 
               {/* End .contact Form */}
