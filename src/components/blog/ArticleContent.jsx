@@ -49,7 +49,10 @@ const ArticleContent = () => {
           <div className="scrollable">
             <div className="blog-grid">
               <div className="blog-img">
-                <img src={postDetails.image} alt={postDetails.title}></img>
+                <img
+                  src={postDetails?.image.replace("http://", "https://")}
+                  alt={postDetails.title}
+                ></img>
               </div>
               {/* End blog-img */}
               <article className="article">

@@ -3,6 +3,7 @@ import Social from "../Social";
 import Testimonials from "../testimonial/Testimonial";
 import Services from "../service/Service";
 import { getPost } from "../../services/blogServices";
+import Loader from "../common/Loader";
 
 const dob = new Date(1987, 5, 1);
 const today = new Date();
@@ -28,6 +29,19 @@ const About = () => {
     };
     getAboutData();
   }, []);
+
+  let imageLoading = <Loader />;
+  if (Object.keys(aboutData).length !== 0) {
+    imageLoading = (
+      <div className="img-in">
+        <img
+          src={aboutData?.image.replace("http://", "https://")}
+          alt={aboutData.title}
+        />
+      </div>
+    );
+  }
+
   return (
     <>
       <section id="about" className="section theme-light dark-bg">
@@ -40,9 +54,7 @@ const About = () => {
             >
               <div className="about-me">
                 <div className="img">
-                  <div className="img-in">
-                    <img src={aboutData.image} alt={aboutData.title} />
-                  </div>
+                  {imageLoading}
 
                   <Social />
 

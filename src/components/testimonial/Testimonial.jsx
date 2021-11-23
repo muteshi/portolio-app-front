@@ -47,7 +47,10 @@ export default function SimpleSlider() {
       >
         <div className="testimonial-01 media">
           <div className="avatar">
-            <img src={item.image} alt="review comments"></img>
+            <img
+              src={item?.image.replace("http://", "https://")}
+              alt={item.title}
+            ></img>
           </div>
           <div className="media-body">
             <p>{item.content}</p>

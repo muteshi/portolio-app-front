@@ -13,7 +13,7 @@ const ResumePreview = (props) => {
   }, []);
   return (
     <object
-      data={resume[0]?.resume}
+      data={resume[0]?.resume.replace("http://", "https://")}
       type="application/pdf"
       width="100%"
       height="600"

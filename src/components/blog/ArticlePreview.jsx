@@ -19,7 +19,7 @@ const ArticlePreview = ({
     >
       <div className="blog-grid" onClick={onClick}>
         <div className="blog-img">
-          <img src={image} alt="blog post"></img>
+          <img src={image?.replace("http://", "https://")} alt={title}></img>
 
           {feature && (
             <span class="badge bg-info text-dark featured">Featured</span>

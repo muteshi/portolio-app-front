@@ -107,8 +107,14 @@ const PortfolioAnimation = () => {
                           <span>{val.title}</span>
                         </div>
                         {/* End .portfolio-info */}
-                        <a href={val.image} className="gallery-link">
-                          <img src={val.image} alt={val.title} />
+                        <a
+                          href={val?.image.replace("http://", "https://")}
+                          className="gallery-link"
+                        >
+                          <img
+                            src={val?.image.replace("http://", "https://")}
+                            alt={val.title}
+                          />
                         </a>
                         {/* End gallery link */}
 
@@ -155,7 +161,10 @@ const PortfolioAnimation = () => {
                         </div>
                         {/* End .portfolio-info */}
                         <a href={val.iamge} className="gallery-link">
-                          <img src={val.image} alt={val.title} />
+                          <img
+                            src={val?.image.replace("http://", "https://")}
+                            alt={val.title}
+                          />
                         </a>
                         {/* End gallery link */}
 
@@ -204,7 +213,10 @@ const PortfolioAnimation = () => {
                         </div>
                         {/* End .portfolio-info */}
                         <a href={val.image} className="gallery-link">
-                          <img src={val.image} alt={val.title} />
+                          <img
+                            src={val?.image.replace("http://", "https://")}
+                            alt={val.title}
+                          />
                         </a>
                         {/* End gallery link */}
 

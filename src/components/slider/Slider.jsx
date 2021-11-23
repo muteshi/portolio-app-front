@@ -5,6 +5,7 @@ import DarkModeContext from "../../context/darkModeContext";
 import Toggle from "../common/Toggle";
 import { getPost } from "../../services/blogServices";
 import { Link } from "react-router-dom";
+import Loader from "../common/Loader";
 
 const conctInfo = {
   phone: "+254 711 820 424",
@@ -25,19 +26,30 @@ const Slider = () => {
   const postSlug = "muteshi-paul";
 
   useEffect(() => {
-    let isMounted = true;
     const getPostData = async () => {
       const { data: post } = await getPost(postSlug);
       setPersonalData(post);
     };
-    if (isMounted) getPostData();
-    return () => {
-      isMounted = false;
-    };
+    getPostData();
   }, []);
 
   const lightMode = <Toggle Icon={FaMoon} onClick={toggle} page={"/"} />;
   const darkMode = <Toggle Icon={FaSun} onClick={toggle} page={"/dark"} />;
+
+  let imageLoading = <Loader />;
+  if (Object.keys(personalData).length !== 0) {
+    imageLoading = (
+      <div
+        className="hb-me"
+        style={{
+          backgroundImage: `url(${personalData.image.replace(
+            "http://",
+            "https://"
+          )})`,
+        }}
+      ></div>
+    );
+  }
 
   return (
     <>
@@ -116,12 +128,7 @@ const Slider = () => {
           </div>
         </div>
         {/* End Container*/}
-        <div
-          className="hb-me"
-          style={{
-            backgroundImage: `url(${personalData.image})`,
-          }}
-        ></div>
+        {imageLoading}
       </section>
 
       {/* End Home Banner  */}
