@@ -1,6 +1,6 @@
 import { DiscussionEmbed, CommentCount } from "disqus-react";
 
-const shortname = "muteshi";
+const shortname = "muteshi-com";
 const siteUrl = window.location.href;
 const lang = "en";
 
