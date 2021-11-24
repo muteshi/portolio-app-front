@@ -1,25 +1,35 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import Article from "../components/blog/Article";
-import HomeLightAnimation from "../views/all-home-version/HomeLightAnimation";
-import HomeDarkAnimation from "../views/all-home-version/HomeDarkAnimation";
-import NotFound from "../views/NotFound";
+import HomePage from "../views/all-home-version/HomeLightAnimation";
 import ScrollTopBehaviour from "../components/ScrollTopBehaviour";
-import ResumePreview from "../components/resume/ResumePreview";
+import Loader from "../components/common/Loader";
+
+const Article = React.lazy(() => import("../components/blog/Article"));
+
+const DarkModeTheme = React.lazy(() =>
+  import("../views/all-home-version/HomeDarkAnimation")
+);
+
+const ResumePreview = React.lazy(() =>
+  import("../components/resume/ResumePreview")
+);
+const NotFound = React.lazy(() => import("../views/NotFound"));
 
 const Routes = () => {
   return (
-    <Router basename="/">
-      <ScrollTopBehaviour />
-      <Switch>
-        <Route path="/blog/:postSlug" component={Article} />
-        <Route path="/resume-preview" component={ResumePreview} />
-        <Route path="/dark" component={HomeDarkAnimation} />
-        <Route exact path="/" component={HomeLightAnimation} />
-        <Route component={NotFound} />
-      </Switch>
-    </Router>
+    <Suspense fallback={<Loader />}>
+      <Router basename="/">
+        <ScrollTopBehaviour />
+        <Switch>
+          <Route path="/blog/:postSlug" component={Article} />
+          <Route path="/resume-preview" component={ResumePreview} />
+          <Route path="/dark" component={DarkModeTheme} />
+          <Route exact path="/" component={HomePage} />
+          <Route component={NotFound} />
+        </Switch>
+      </Router>
+    </Suspense>
   );
 };
 
