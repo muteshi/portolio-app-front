@@ -1,11 +1,14 @@
 import React, { Suspense } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import HomePage from "../views/all-home-version/HomeLightAnimation";
 import ScrollTopBehaviour from "../components/ScrollTopBehaviour";
 import Loader from "../components/common/Loader";
 
 const Article = React.lazy(() => import("../components/blog/Article"));
+
+const HomePage = React.lazy(() =>
+  import("../views/all-home-version/HomeLightAnimation")
+);
 
 const DarkModeTheme = React.lazy(() =>
   import("../views/all-home-version/HomeDarkAnimation")
