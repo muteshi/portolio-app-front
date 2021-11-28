@@ -23,4 +23,4 @@ const Recaptcha = ({ handleLoaded }) => {
   );
 };
 
-export default Recaptcha;
+export default React.memo(Recaptcha);

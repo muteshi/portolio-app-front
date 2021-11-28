@@ -1,7 +1,7 @@
-import { React, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { getResume } from "../../services/blogServices";
 
-const ResumePreview = (props) => {
+const ResumePreview = () => {
   const [resume, setResume] = useState([]);
 
   useEffect(() => {
@@ -13,7 +13,7 @@ const ResumePreview = (props) => {
   }, []);
   return (
     <object
-      data={resume[0]?.resume.replace("http://", "https://")}
+      data={resume[0]?.key.replace("http://", "https://")}
       type="application/pdf"
       width="100%"
       height="600"
@@ -22,4 +22,4 @@ const ResumePreview = (props) => {
   );
 };
 
-export default ResumePreview;
+export default React.memo(ResumePreview);

@@ -1,5 +1,4 @@
 import React from "react";
-
 const Input = ({ error, name, label, colClass, isInput = true, ...rest }) => {
   return (
     <div className={colClass}>
@@ -26,4 +25,4 @@ const Input = ({ error, name, label, colClass, isInput = true, ...rest }) => {
   );
 };
 
-export default Input;
+export default React.memo(Input);

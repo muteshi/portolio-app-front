@@ -3,14 +3,6 @@ import http from "./httpService";
 
 const apiEndpoint = apiUrl + "/blog/";
 
-// const axiosInstance = axios.create({
-//   baseURL: apiUrl,
-//   headers: {
-//     "Content-Type": "application/json",
-//     accept: "application/json",
-//   },
-// });
-
 function postUrl(slug) {
   return `${apiEndpoint}${slug}`;
 }
