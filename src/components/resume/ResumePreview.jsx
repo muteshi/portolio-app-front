@@ -13,7 +13,7 @@ const ResumePreview = () => {
   }, []);
   return (
     <object
-      data={resume[0]?.key.replace("http://", "https://")}
+      data={resume[0]?.resume.replace("http://", "https://")}
       type="application/pdf"
       width="100%"
       height="600"
