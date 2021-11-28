@@ -47,7 +47,7 @@ export default function Service() {
           </div>
           <div className="feature-content">
             <h5>{item.title}</h5>
-            <p>{item.content}</p>
+            <p dangerouslySetInnerHTML={{ __html: item.content }}></p>
           </div>
         </div>
         {/* End .feature-box-01 */}

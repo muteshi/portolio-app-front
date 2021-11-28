@@ -9,6 +9,7 @@ import {
   getPortfolios,
   getWebPortfolios,
 } from "../../services/blogServices";
+import LazyLoadImage from "../common/LazyLoadImage";
 
 const breakpointColumnsObj = {
   default: 3,
@@ -111,10 +112,12 @@ const PortfolioAnimation = () => {
                           href={val?.image.replace("http://", "https://")}
                           className="gallery-link"
                         >
-                          <img
-                            src={val?.image.replace("http://", "https://")}
-                            alt={val.title}
-                          />
+                          <LazyLoadImage>
+                            <img
+                              src={val?.image.replace("http://", "https://")}
+                              alt={val.title}
+                            />
+                          </LazyLoadImage>
                         </a>
                         {/* End gallery link */}
 

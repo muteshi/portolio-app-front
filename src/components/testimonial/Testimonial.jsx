@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { getTestimonials } from "../../services/blogServices";
 import Loader from "../common/Loader";
+import LazyLoadImage from "../common/LazyLoadImage";
 
 export default function SimpleSlider() {
   const [testmonials, setTestimonials] = useState();
@@ -47,13 +48,15 @@ export default function SimpleSlider() {
       >
         <div className="testimonial-01 media">
           <div className="avatar">
-            <img
-              src={item?.image.replace("http://", "https://")}
-              alt={item.title}
-            ></img>
+            <LazyLoadImage>
+              <img
+                src={item?.image.replace("http://", "https://")}
+                alt={item.title}
+              ></img>
+            </LazyLoadImage>
           </div>
           <div className="media-body">
-            <p>{item.content}</p>
+            <p dangerouslySetInnerHTML={{ __html: item.content }}></p>
             <h6>{item.title}</h6>
             <span>{item.designation}</span>
           </div>

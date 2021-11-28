@@ -105,9 +105,8 @@ const Slider = () => {
                   data-aos="fade-up"
                   data-aos-duration="1200"
                   data-aos-delay="300"
-                >
-                  {personalData.content}
-                </p>
+                  dangerouslySetInnerHTML={{ __html: personalData.content }}
+                ></p>
 
                 <div
                   className="mt-4"

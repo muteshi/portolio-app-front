@@ -4,6 +4,7 @@ import Testimonials from "../testimonial/Testimonial";
 import Services from "../service/Service";
 import { getPost } from "../../services/blogServices";
 import Loader from "../common/Loader";
+import LazyLoadImage from "../common/LazyLoadImage";
 
 const dob = new Date(1987, 5, 1);
 const today = new Date();
@@ -82,7 +83,9 @@ const About = () => {
                   <h3>{aboutData.title}</h3>
                 </div>
                 <div className="about-text">
-                  <p>{aboutData.content}</p>
+                  <p dangerouslySetInnerHTML={{ __html: aboutData.content }}>
+                    {/* {aboutData.content} */}
+                  </p>
                 </div>
                 <div className="info-list">
                   <div className="row">
@@ -146,14 +149,16 @@ const About = () => {
           {/* End .row */}
 
           {/* separated */}
-          <div
-            className="separated"
-            style={{
-              backgroundImage: `url(${
-                process.env.PUBLIC_URL + "img/border-dark.png"
-              })`,
-            }}
-          ></div>
+          <LazyLoadImage>
+            <div
+              className="separated"
+              style={{
+                backgroundImage: `url(${
+                  process.env.PUBLIC_URL + "img/border-dark.png"
+                })`,
+              }}
+            ></div>
+          </LazyLoadImage>
           {/* End separated */}
 
           <div className="title">
