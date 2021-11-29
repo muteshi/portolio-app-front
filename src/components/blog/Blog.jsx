@@ -43,7 +43,7 @@ const News = () => {
         {blogPosts.length > 0 ? (
           <ArticlePreview
             aosDelay="800"
-            feature={blogPosts[0].featured}
+            feature={blogPosts[1].featured}
             onClick={() => handleClick(blogPosts[1].slug)}
             image={blogPosts[1].image}
             title={blogPosts[1].title}
