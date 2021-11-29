@@ -22,7 +22,7 @@ const ArticlePreview = ({
           <img src={image?.replace("http://", "https://")} alt={title}></img>
 
           {feature && (
-            <span class="badge bg-info text-dark featured">Featured</span>
+            <span className="badge bg-info text-dark featured">Featured</span>
           )}
         </div>
 

@@ -5,6 +5,7 @@ import Services from "../service/Service";
 import { getPost } from "../../services/blogServices";
 import Loader from "../common/Loader";
 import LazyLoadImage from "../common/LazyLoadImage";
+import { BASE_URL } from "../../config";
 
 const dob = new Date(1987, 5, 1);
 const today = new Date();
@@ -35,10 +36,7 @@ const About = () => {
   if (Object.keys(aboutData).length !== 0) {
     imageLoading = (
       <div className="img-in">
-        <img
-          src={aboutData?.image.replace("http://", "https://")}
-          alt={aboutData.title}
-        />
+        <img src={`${BASE_URL}${aboutData.image}`} alt={aboutData.title} />
       </div>
     );
   }

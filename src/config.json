@@ -3,5 +3,6 @@
   "avatar": "https://app.muteshi.com/static/media/uploads/post/9337d234-34d5-4f5f-9e35-2d105ad1f46d.png",
   "RECAPTCHA_URL": "https://www.google.com/recaptcha/api.js?render=",
   "RECAPTCHA_SITE_KEY": "6LdcBRsdAAAAACIDhHpk_aT1pkXR25A1tCtzxoV3",
-  "SITE_TITLE": "Muteshi.com || Full-Stack web developer from Nairobi"
+  "SITE_TITLE": "Muteshi.com || Full-Stack web developer from Nairobi",
+  "BASE_URL": "https://app.muteshi.com"
 }

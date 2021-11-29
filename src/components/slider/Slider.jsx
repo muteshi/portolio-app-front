@@ -6,6 +6,7 @@ import Toggle from "../common/Toggle";
 import { getPost } from "../../services/blogServices";
 import { Link } from "react-router-dom";
 import Loader from "../common/Loader";
+import { BASE_URL } from "../../config";
 
 const conctInfo = {
   phone: "+254 711 820 424",
@@ -42,10 +43,7 @@ const Slider = () => {
       <div
         className="hb-me"
         style={{
-          backgroundImage: `url(${personalData.image.replace(
-            "http://",
-            "https://"
-          )})`,
+          backgroundImage: `url(${BASE_URL}${personalData.image})`,
         }}
       ></div>
     );
