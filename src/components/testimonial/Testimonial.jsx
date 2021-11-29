@@ -6,7 +6,7 @@ import { getTestimonials } from "../../services/blogServices";
 import Loader from "../common/Loader";
 import LazyLoadImage from "../common/LazyLoadImage";
 
-export default function SimpleSlider() {
+const SimpleSlider = () => {
   const [testmonials, setTestimonials] = useState();
   useEffect(() => {
     const loadTestimonials = async () => {
@@ -95,4 +95,6 @@ export default function SimpleSlider() {
       <Slider {...settings}>{testimonialData}</Slider>
     </div>
   );
-}
+};
+
+export default React.memo(SimpleSlider);

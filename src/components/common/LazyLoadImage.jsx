@@ -1,3 +1,4 @@
+import React from "react";
 import LazyLoad from "react-lazyload";
 
 const LazyLoadImage = (props) => {
@@ -8,4 +9,4 @@ const LazyLoadImage = (props) => {
   );
 };
 
-export default LazyLoadImage;
+export default React.memo(LazyLoadImage);

@@ -58,6 +58,7 @@ const Resume = () => {
   if (experience) {
     experienceData = experience.map((item) => {
       let paragraph = item.content.split("-").map((p, i) => {
+        p = p.replace(/<[^>]*>?/gm, "");
         if (p) {
           return <li key={i}>{p}</li>;
         }
@@ -152,4 +153,4 @@ const Resume = () => {
   );
 };
 
-export default Resume;
+export default React.memo(Resume);

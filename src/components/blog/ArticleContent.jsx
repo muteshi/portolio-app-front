@@ -97,4 +97,4 @@ const ArticleContent = () => {
   );
 };
 
-export default ArticleContent;
+export default React.memo(ArticleContent);

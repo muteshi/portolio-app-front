@@ -34,7 +34,7 @@ const Contact = () => {
   const doSubmit = async () => {
     try {
       const { status } = await sendMessage({ ...data, recaptchaToken });
-      console.log(status);
+
       if (status === 201) {
         toast.success("You have successfully send your message");
         setData({

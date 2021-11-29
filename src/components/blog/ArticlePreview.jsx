@@ -37,4 +37,4 @@ const ArticlePreview = ({
   );
 };
 
-export default ArticlePreview;
+export default React.memo(ArticlePreview);

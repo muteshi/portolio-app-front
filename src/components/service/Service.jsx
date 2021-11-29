@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getServices } from "../../services/blogServices";
 import Loader from "../common/Loader";
 
-export default function Service() {
+const Service = () => {
   const [services, setServices] = useState();
   useEffect(() => {
     const loadServices = async () => {
@@ -59,4 +59,6 @@ export default function Service() {
       <div className="row">{servicesData}</div>
     </>
   );
-}
+};
+
+export default React.memo(Service);

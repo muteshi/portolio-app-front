@@ -247,4 +247,4 @@ const PortfolioAnimation = () => {
   );
 };
 
-export default PortfolioAnimation;
+export default React.memo(PortfolioAnimation);

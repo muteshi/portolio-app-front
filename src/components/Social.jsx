@@ -40,4 +40,4 @@ const Social = () => {
   );
 };
 
-export default Social;
+export default React.memo(Social);

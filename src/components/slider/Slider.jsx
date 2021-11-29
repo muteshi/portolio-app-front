@@ -133,4 +133,4 @@ const Slider = () => {
   );
 };
 
-export default Slider;
+export default React.memo(Slider);
