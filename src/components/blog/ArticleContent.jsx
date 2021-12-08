@@ -6,6 +6,7 @@ import Loader from "../common/Loader";
 import { avatar } from "../../config.json";
 import useDocumentTitle from "../../hooks/useDocumentTitle";
 import { ArticleComments, ArticleCommentsCount } from "../common/Disqus";
+import { BASE_URL } from "../../config";
 
 const ArticleContent = () => {
   const [postDetails, setPostDetails] = useState();
@@ -49,7 +50,7 @@ const ArticleContent = () => {
             <div className="blog-grid">
               <div className="blog-img">
                 <img
-                  src={postDetails?.image.replace("http://", "https://")}
+                  src={`${BASE_URL}${postDetails?.image}`}
                   alt={postDetails.title}
                 ></img>
               </div>

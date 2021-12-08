@@ -4,7 +4,6 @@ import { FaMoon, FaSun } from "react-icons/fa";
 import DarkModeContext from "../../context/darkModeContext";
 import Toggle from "../common/Toggle";
 import { getPost } from "../../services/blogServices";
-import { Link } from "react-router-dom";
 import Loader from "../common/Loader";
 import { BASE_URL } from "../../config";
 
@@ -55,8 +54,8 @@ const Slider = () => {
       <section id="home" className="home-banner">
         <div className="hb-top-fixed d-flex">
           <div className="hb-info">
-            <Link to="#">{conctInfo.phone}</Link>
-            <Link to="#">{conctInfo.email}</Link>
+            <a href="/#">{conctInfo.phone}</a>
+            <a href="/#">{conctInfo.email}</a>
           </div>
           {!isDarkMode ? lightMode : darkMode}
           <div className="hb-lang"></div>
@@ -112,13 +111,13 @@ const Slider = () => {
                   data-aos-duration="1200"
                   data-aos-delay="400"
                 >
-                  <Link
+                  <a
                     target="_blank"
                     className="px-btn px-btn-white"
-                    to="/resume-preview"
+                    href="/resume-preview"
                   >
                     View my CV
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>
