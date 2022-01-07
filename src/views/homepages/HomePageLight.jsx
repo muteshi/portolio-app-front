@@ -9,8 +9,10 @@ import ContactInfo from "../../components/contact/ContactInfo";
 import Footer from "../../components/footer/Footer";
 import { SITE_TITLE } from "../../config.json";
 import useDocumentTitle from "../../hooks/useDocumentTitle";
+import useGaTracker from "../../hooks/useGaTracker";
 
 const HomeOne = () => {
+  useGaTracker();
   useDocumentTitle(SITE_TITLE);
   document.body.classList.add("theme-light");
   return (

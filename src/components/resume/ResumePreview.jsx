@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
+import useGaTracker from "../../hooks/useGaTracker";
 import { getResume } from "../../services/blogServices";
 
 const ResumePreview = () => {
+  useGaTracker();
   const [resume, setResume] = useState([]);
 
   useEffect(() => {

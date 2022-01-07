@@ -11,8 +11,10 @@ import Footer from "../../components/footer/Footer";
 import useDocumentTitle from "../../hooks/useDocumentTitle";
 import DarkModeContext from "../../context/darkModeContext";
 import { SITE_TITLE } from "../../config.json";
+import useGaTracker from "../../hooks/useGaTracker";
 
 const HomeOne = () => {
+  useGaTracker();
   const { isDarkMode } = useContext(DarkModeContext);
   useDocumentTitle(SITE_TITLE);
 

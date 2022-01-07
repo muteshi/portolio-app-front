@@ -3,8 +3,10 @@ import React from "react";
 import ArticleContent from "./ArticleContent";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
+import useGaTracker from "../../hooks/useGaTracker";
 
 const Article = ({ props }) => {
+  useGaTracker();
   document.body.classList.add("theme-light");
   return (
     <>
