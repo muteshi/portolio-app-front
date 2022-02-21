@@ -41,14 +41,29 @@ const News = () => {
         )}
 
         {blogPosts.length > 0 ? (
-          <ArticlePreview
-            aosDelay="800"
-            feature={blogPosts[1].featured}
-            onClick={() => handleClick(blogPosts[1].slug)}
-            image={blogPosts[1].image}
-            title={blogPosts[1].title}
-            date={getDuration(blogPosts[1].date_posted)}
-          />
+          <>
+            <ArticlePreview
+              aosDelay="800"
+              feature={blogPosts[1].featured}
+              onClick={() => handleClick(blogPosts[1].slug)}
+              image={blogPosts[1].image}
+              title={blogPosts[1].title}
+              date={getDuration(blogPosts[1].date_posted)}
+            />
+            <div className="row">
+              <div className="col-sm-3"></div>
+              <div className="col-sm-6" align="center">
+                <a
+                  target="_blank"
+                  className="px-btn px-btn-white"
+                  href="https://blog.muteshi.com/"
+                >
+                  View all posts
+                </a>
+              </div>
+              <div className="col-sm-3"></div>
+            </div>
+          </>
         ) : (
           <Loader />
         )}

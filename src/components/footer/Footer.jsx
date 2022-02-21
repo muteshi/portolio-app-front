@@ -18,7 +18,7 @@ const SocialShare = [
 const Footer = () => {
   return (
     <>
-      <div className="row align-items-center">
+      <div className="row align-items-center mb-0">
         <div className="col-md-6 my-2">
           <div className="nav justify-content-center justify-content-md-start">
             {SocialShare.map((val, i) => (
