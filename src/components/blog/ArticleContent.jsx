@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import ReactMarkdown from "react-markdown";
 import { useParams } from "react-router-dom";
 import { getBlogPost } from "../../services/blogServices";
 import { getDateDetails } from "../utils";
@@ -73,10 +74,10 @@ const ArticleContent = () => {
                   </div>
                 </div>
                 {/* End .article-title */}
-                <div
-                  className="article-content"
-                  dangerouslySetInnerHTML={{ __html: postDetails.content }}
-                />
+                <ReactMarkdown className="article-content">
+                  {postDetails.content}
+                </ReactMarkdown>
+                {/* <div className="article-content" /> */}
 
                 <ul className="nav tag-cloud">{tagsLoading}</ul>
                 {/* End tag */}
