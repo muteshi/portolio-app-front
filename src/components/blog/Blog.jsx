@@ -11,7 +11,7 @@ const News = () => {
   const history = useHistory();
 
   const handleClick = (slug) => {
-    history.push(`/blog/${slug}`);
+    history.push(`/posts/${slug}`);
   };
 
   useEffect(() => {

@@ -21,7 +21,7 @@ const Routes = () => {
     <Suspense fallback={<Loader />}>
       <ScrollTopBehaviour />
       <Switch>
-        <Route path="/blog/:postSlug" component={Article} />
+        <Route path="/posts/:postSlug" component={Article} />
         <Route path="/resume-preview" component={ResumePreview} />
         <Route path="/dark" component={DarkModeTheme} />
         <Route exact path="/" component={HomePage} />
